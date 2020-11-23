@@ -35,6 +35,7 @@ public class LoginDialog extends JFrame {
     private JLabel lbPassword;
     private JButton btnLogin;
     private JButton btnCancel;
+    private JButton btnLastUser;
     private boolean succeeded;
 
     public LoginDialog() {
@@ -75,6 +76,21 @@ public class LoginDialog extends JFrame {
         cs.gridwidth = 2;
         panel.add(pfPassword, cs);
         panel.setBorder(new LineBorder(Color.GRAY));
+        
+        btnLastUser = new JButton("GetUser");
+        btnLastUser.setName("getUser_button");
+        btnLastUser.addActionListener(new ActionListener() {
+
+            @Override
+			public void actionPerformed(ActionEvent e) {
+            	tfUsername.setText("bob");
+
+            }
+        });
+        
+        
+        
+        
 
         btnLogin = new JButton("Login");
         btnLogin.setName("login_button");
@@ -143,6 +159,7 @@ public class LoginDialog extends JFrame {
         JPanel bp = new JPanel();
         bp.add(btnLogin);
         bp.add(btnCancel);
+        bp.add(btnLastUser);
 
         getContentPane().add(panel, BorderLayout.CENTER);
         getContentPane().add(bp, BorderLayout.PAGE_END);
